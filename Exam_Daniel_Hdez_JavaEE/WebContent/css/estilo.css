@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+body{
+	
+	padding:15px;
+	width: 500px;
+    height: 200px;
+    margin : auto;
+    background-color:gtay; 
+}
+h2{
+	position: relative;
+	width:500px;
+	right:5px;
+	top:5px;
+	border: black 1px solid;
+	align-content:center;
+	
+}
+
+form{
+	width: 500px;
+}
+
+ #circ, #ini{
+	
+	border: black 1px solid;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+#resultado{
+	border: black 1px solid;
+	text-align: center;
+	height: 300px;
+	width: 500px;
+	
+}

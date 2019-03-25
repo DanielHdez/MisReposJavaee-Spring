@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Alquiler de vivienda</title>
+</head>
+<body>
+<h1>Formulario de Alquiler de Vivienda:</h1>
+
+<form action="Alquila" method="get">
+  <fieldset>
+  	<legend>Alquila tu vivienda</legend>
+  <fieldset>
+	  <legend>Elige la zona donde alquilar tu vivienda</legend>
+	  <select name="ciudad">
+		  <option value="leganes" >Leganes (20 &euro;/m2)</option>
+		  <option value="fuenlabrada">Fuenlabrada (15€/m2)</option>
+		  <option value="mostoles" selected>Mostoles (14 €/m2)</option>
+		  <option value="alcorcon">Alcorcon (21€/m2)</option>
+	  </select>
+	  
+	  
+	<!--   <input type="checkbox" name="leganes" > Leganes
+	  <input type="checkbox" name="fuenlabrada" value="">Fuenlabrada
+	  <input type="checkbox" name="mostoles" value="" checked>Móstoles
+	  <input type="checkbox" name="alcorcon" value="" checked>Alcorcon <br>
+ 	  -->
+ 	   Metros Cuadrados <input type="number" name="metros"  required> 
+  </fieldset>
+  <fieldset>
+	  <legend>Extras</legend>
+	  <input type="checkbox" name="calefaccion"> Calefacciòn
+	  <input type="checkbox" name="piscina" >Piscina
+	  <input type="checkbox" name="ac">Aire Acondicionado
+  </fieldset>
+   <fieldset>
+	  <legend>Estas empleado</legend>
+	  <input type="radio" name="empleado" value="siempleado" checked> Sí
+	  <input type="radio" name="empleado" value="noempleado">No
+  </fieldset>
+    
+  </fieldset>
+	  <input type="submit" value="Submit">
+
+
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+     
+	<bean id="obra" class="com.pruebas.obraDeTeatro.Obra"/>
+		
+	<bean id="public" class="com.pruebas.obraDeTeatro.Publico" />
+	
+	<aop:config>
+		<aop:aspect ref="public">
+			<aop:pointcut id="comenzar" expression="execution(* com.pruebas.obraDeTeatro.Obra.comenzarObra(..))" />
+			<aop:before method="sentarse" pointcut-ref="comenzar"/>
+		    <aop:pointcut id="descanso" expression="execution(* com.pruebas.obraDeTeatro.Obra.descanso(..))" />
+		    <aop:after-returning method="descanso" pointcut-ref="descanso"/>
+		    <aop:pointcut id="reanudar"   expression="execution(* com.pruebas.obraDeTeatro.Obra.reanudarObra(..))" />
+		    <aop:before method="sentarse" pointcut-ref="reanudar"/>
+		    <aop:pointcut id="pacasa"   expression="execution(* com.pruebas.obraDeTeatro.Obra.finObra(..))" />
+		    <aop:after-returning method="aCasa" pointcut-ref="pacasa"/>
+			<aop:after-returning method="aCasa" pointcut-ref="aplaude"/>
+			<aop:after-throwing method="aCasa" pointcut-ref="abuchea"/>
+		    
+		    
+			
+		</aop:aspect>
+	</aop:config>
+     
+</beans>

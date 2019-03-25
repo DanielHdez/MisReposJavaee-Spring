@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+">
+
+<context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
+<!-- Creacion de la dependencia con constructor  -->
+	<bean id="informe" class="com.soft.ioc.Informe"> </bean>
+	<bean id="jefe" class="com.soft.ioc.JefeEmpleado">
+	<constructor-arg ref="informe"></constructor-arg>
+	</bean>
+	<!-- Inyeccion de dependencias con setter sin el set y con la primera en minúscula -->
+	<bean id="secretario" class="com.soft.ioc.SecretarioEmpleado">
+		<property name="nuevoinforme" ref="informe"></property>
+		<property name="email" value="secretario@tuacademiadeciencias.es"></property>
+		<property name="nombreEmpresa" value="TuAcademiadeCiencias"></property>
+	</bean>
+	<bean id="director" class="com.soft.ioc.DirectorEmpleado">
+		<property name="nuevoinforme" ref="informe"></property>
+		<property name="email" value="${email}"></property>
+		<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
+	</bean>
+	
+
+</beans>

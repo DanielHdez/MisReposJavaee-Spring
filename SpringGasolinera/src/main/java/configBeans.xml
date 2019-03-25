@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+ <bean id="cochecito" class="com.prueba.SpringGasolinera.Coche">
+  <constructor-arg index="0" value="4258jjg" type="java.lang.String" />
+  <constructor-arg index="1" value="Peugeaot" type="java.lang.String" />
+   <constructor-arg index="2" value="207" type="java.lang.String" />
+ </bean>
+ <bean id="empleadito" autowire="byType" class="com.prueba.SpringGasolinera.Empleado">
+  <constructor-arg index="0" value="Paquito" type="java.lang.String" />
+  <constructor-arg index="1" value="666969663" type="java.lang.String" />
+ </bean>
+ 
+  <bean id="Estacion" autowire="byType" class="com.prueba.SpringGasolinera.Gasolinera">
+  <constructor-arg index="0" value="C/Juan Pablo 5" type="java.lang.String" />
+ </bean>
+</beans>
